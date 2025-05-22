@@ -1,0 +1,204 @@
+/* Reset e base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+/* Estiliza o corpo da página */
+body {
+  background: #F7F7F8; /* Cor de fundo */
+  color: #5B6472;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 10px;
+}
+/* Container principal que envolve o conteúdo */
+.container {
+  background: #ffffffcc;
+  max-width: 720px;
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid #1BBCC4; /* Borda fina azul */
+  padding: 30px 40px 40px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+/* Título principal */
+h1 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: #444E5E;
+  letter-spacing: 1.2px;
+  margin-bottom: 10px;
+}
+/* Estilização do formulário - grid com duas colunas */
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 30px;
+  align-items: center;
+}
+/* Textarea do formulário */
+form textarea {
+  grid-column: 1 / -1; /* ocupa as duas colunas */
+  resize: vertical;
+  min-height: 80px;
+  font-size: 1rem;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid #1BBCC4;
+  transition: border-color 0.3s ease;
+  color: #5B6472;
+  font-weight: 500;
+}
+/* Foco na textarea */
+form textarea:focus {
+  outline: none;
+  border-color: #1599a6;
+  background-color: #e2f0d9;
+}
+/* Inputs do formulário */
+form input {
+  padding: 12px 15px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #1BBCC4;
+  transition: border-color 0.3s ease;
+  color: #5B6472;
+  font-weight: 600;
+}
+/* Foco nos inputs */
+form input:focus {
+  outline: none;
+  border-color: #1599a6;
+  background-color: #e2f0d9;
+}
+/* Botão principal do formulário */
+form button {
+  grid-column: 1 / -1; /* ocupa as duas colunas */
+  padding: 14px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 10px;
+  background: #1BBCC4;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(27, 188, 196, 0.6);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+/* Efeito hover no botão */
+form button:hover {
+  background: #16a6b0;
+  box-shadow: 0 6px 15px rgba(22, 166, 176, 0.8);
+}
+/* Estilos para mensagens de feedback */
+.feedback {
+  text-align: center;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 8px;
+  padding: 10px 15px;
+  display: none; 
+  color: #5B6472;
+}
+/* Mensagem de erro */
+.feedback.error {
+  background-color: #ef9a9a;
+  color: #7f1a1a;
+  display: block;
+  margin-bottom: 10px;
+}
+/* Mensagem de sucesso */
+.feedback.success {
+  background-color: #a5d6a7;
+  color: #1b5e20;
+  display: block;
+  margin-bottom: 10px;
+}
+/* Título da seção de produtos */
+h2 {
+  font-weight: 700;
+  color: #444E5E;
+  border-bottom: 1px solid #1BBCC4;
+  padding-bottom: 8px;
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+}
+/* Lista de produtos */
+ul#product-list {
+  list-style: none;
+  max-height: 320px;
+  overflow-y: auto;
+  border: 1px solid #1BBCC4;
+  border-radius: 10px;
+  padding: 0;
+  background: #F2F2F2;
+  color: #444E5E;
+  font-size: 0.9rem; 
+}
+/* Itens da lista */
+ul#product-list li {
+  padding: 14px 20px;
+  margin: 0;
+  border-bottom: 1px solid #1BBCC4;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #F2F2F2;
+  transition: background-color 0.3s ease;
+}
+/* Itens pares com cor de fundo alternativa */
+ul#product-list li:nth-child(even) {
+  background: #E5E1E1;
+}
+/* Remove a borda do último item */
+ul#product-list li:last-child {
+  border-bottom: none;
+}
+/* Contêiner dos botões "Editar" e "Excluir" */
+.btn-group {
+  display: flex;
+  gap: 12px;
+}
+/* Botões de ação na lista */
+button.action-btn {
+  border: none;
+  background-color: transparent;
+  color: #444E5E;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-weight: 700;
+  transition: background-color 0.25s ease, color 0.25s ease;
+  user-select: none;
+}
+/* Efeito hover nos botões da lista */
+button.action-btn:hover {
+  background-color: #1BBCC4;
+  color: white;
+  box-shadow: none;
+}
+/* Estilos responsivos */
+@media (max-width: 650px) {
+  form {
+    grid-template-columns: 1fr;
+  }
+  ul#product-list li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .btn-group {
+    margin-top: 8px;
+    width: 100%;
+    justify-content: flex-start;
+    gap: 8px;
+  }
+}
